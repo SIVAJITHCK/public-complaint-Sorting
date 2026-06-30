@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/editert1">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">Name</th>
+        <td><label>
+         <input type="text" name="textfield" value="{{ val.Name }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">E-Type</th>
+      <td><label>
+        <select name="select">
+            <option value="AMBULANCE">AMBULANCE</option>
+            <option value="POLICE">POLICE</option>
+            <option value="FIRE & RESCUE">FIRE & RESCUE</option>
+            <option value="RECOVERY">RECOVERY</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><label>
+        <textarea name="textfield2" > {{ val.Place }}</textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td><label>
+        <input type="text" name="textfield3" value="{{ val.Post }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td><label>
+      <input type="text" name="textfield32" value="{{ val.Pin }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><label>
+      <input type="text" name="textfield33" value="{{ val.Email }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone 1 </th>
+      <td><label>
+      <input type="text" name="textfield34" value="{{ val.Phone1 }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone 2 </th>
+      <td><label>
+      <input type="text" name="textfield35" value="{{ val.Phone2 }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="EDIT" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

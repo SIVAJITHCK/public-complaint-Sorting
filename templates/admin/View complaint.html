@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="view_complaint_search#about">
+  <table width="345" border="1" class="table table-striped">
+    <tr>
+      <th colspan="5" scope="col"><label>Date
+          <input type="date" name="textfield" required/>
+          <input type="submit" name="Submit" value="Search" class="btn btn-info"/>
+      </label></th>
+    </tr>
+    <tr class="table table-dark">
+      <td width="61">Username</td>
+      <td width="62">Complaint</td>
+      <td width="35">Date</td>
+      <td width="71">Department</td>
+      <td width="71">Complaint Status</td>
+      <td width="82">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td> {{ i.User.Name }}</td>
+      <td> <img src="{{ i.Complaint.url }}" width="100" height="100"></td>
+      <td>&nbsp;{{ i.Date }}</td>
+      <td>&nbsp;{{ i.ID.Name }}</td>
+    <td>{{ i.Status}}</td>
+{#        {% if i.Status == 'pending' %}#}
+{#      <td><a href="send_reply/{{ i.id }}#about" class="btn btn-primary">Take Action</a></td>#}
+{#    {% else %}#}
+{#    <td>{{ i.Status }}</td>#}
+{#    {% endif %}#}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
+

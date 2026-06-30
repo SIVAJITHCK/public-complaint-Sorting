@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/manage_officersrch#about">
+  <table width="289" border="1" class="table table-striped">
+    <tr>
+      <th colspan="6" scope="col">department 
+        <label>
+        <select name="select">{% for j in val1 %}
+            <option value="{{ j.id }}">{{ j.Name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" name="Submit" value="search" class="btn btn-info"/>
+      </label></th>
+    </tr>
+    <tr class="table table-dark">
+      <td width="32">name</td>
+      <td width="47">address</td>
+      <td width="37">phone</td>
+      <td width="31">email</td>
+      <td width="68">department</td>
+      <td width="34">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.Name }}</td>
+      <td>&nbsp;{{ i.Place }} {{ i.Post }} {{ i.Pin }}</td>
+      <td>&nbsp;{{ i.Phone }}</td>
+      <td>&nbsp;{{ i.Email }}</td>
+      <td>&nbsp;{{ i.DEPARTMENT.Name }}</td>
+      <td><p><a href="editofficer/{{ i.id }}#about" class="btn btn-success">Edit</a></p>
+      <p><a href="deleteofficer/{{ i.id }}#about" class="btn btn-danger">Delete</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="6"><label>
+        
+        <div align="center"><a href="add_officer#about" class="btn btn-primary">ADD NEW</a></div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

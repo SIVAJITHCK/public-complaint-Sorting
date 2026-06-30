@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="manage_ertsrch#about">
+  <table width="262" border="1" class="table table-striped">
+    <tr>
+      <th colspan="6" scope="col"><label>Name
+          <input type="text" name="textfield" />
+          <input type="submit" name="Submit" value="Search" class="btn btn-info"/>
+      </label></th>
+    </tr>
+    <tr class="table table-dark">
+      <td width="17">Name</td>
+      <td width="28">Address</td>
+      <td width="28">Phone</td>
+      <td width="28">Email</td>
+      <td width="28">Type</td>
+      <td width="93">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td> {{ i.Name }}</td>
+      <td>{{ i.Place }}<br> {{ i.Post }} <br> {{ i.Pin }}</td>
+      <td> {{ i.Phone1 }}<br>{{ i.Phone2 }} </td>
+      <td> {{ i.Email }}</td>
+      <td> {{ i.type}}</td>
+      <td><p><a href="editert/{{ i.id }}#about" class="btn btn-success">Edit</a></p>
+      <p><a href="deleteert/{{ i.id }}#about" class="btn btn-danger">Delete</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="6"><div align="center">
+        <label>
+      <div align="center"><a href="add_ert#about" class="btn btn-primary">ADD NEW</a></div>
+        </label>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

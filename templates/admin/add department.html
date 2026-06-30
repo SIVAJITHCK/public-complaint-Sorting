@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="addof2">
+  <table width="198" border="1" class="table table-striped">
+    <tr>
+      <th width="159" scope="row">Name</th>
+      <td width="23"><label>
+        <input type="text" name="textfield"  required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr >
+      <th scope="row">Details</th>
+      <td><label>
+        <textarea name="textarea" required pattern="[A-Z a-z.]"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-primary"/>
+      </label></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

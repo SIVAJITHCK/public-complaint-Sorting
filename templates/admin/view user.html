@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="view_usersrch#about">
+  <table width="304" border="1" class="table table-striped">
+    <tr>
+      <th colspan="4" scope="col"><label>Name
+          <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}"/>
+          <input type="submit" name="Submit" value="search" class="btn btn-info"/>
+      </label></th>
+    </tr>
+
+    <tr class="table table-dark">
+      <td width="30">Name</td>
+      <td width="47">Address</td>
+      <td width="47">Email</td>
+      <td width="152">Phone</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td> {{ i.Name }}</td>
+      <td> {{ i.Place }} <br> {{ i.Post }} <br>{{ i.Pin }}</td>
+      <td> {{ i.Email }}</td>
+      <td> {{ i.Phone }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

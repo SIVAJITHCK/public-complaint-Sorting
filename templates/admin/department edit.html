@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/deptedit">
+  <table width="198" border="1" class="table table-striped">
+    <tr>
+      <th width="159" scope="row">Name</th>
+      <td width="23"><label>
+        <input type="text" name="textfield"  value="{{ val.Name }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Details</th>
+      <td><label>
+        <textarea name="textarea"> {{ val.Detaile }}</textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Add" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

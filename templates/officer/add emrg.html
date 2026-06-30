@@ -1,0 +1,20 @@
+{% extends 'indexofficer.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="add_emg_number">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">NO</th>
+      <th scope="col"><label>
+        <input type="text" name="textfield" required pattern="[6789][0-9]{9}"/>
+      </label></th>
+
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Sent" class="btn btn-info />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

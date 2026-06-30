@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="view_requestdrop" >
+  <table width="200" border="1" class="table table-striped">
+  <tr>
+  <td colspan="2">
+      <select name="select">
+          {% for i in val1 %}
+          <option value="{{ i.id }}">
+             {{ i.Name }}
+          </option>
+          {% endfor %}
+      </select>
+  </td>
+  <td>
+      <input type="submit" value="submit" class="btn btn-info">
+  </td>
+  </tr>
+    <tr>
+      <th scope="col">Request</th>
+      <th scope="col">Date</th>
+        <th scope="col">Notification Status</th><td></td>
+    </tr>
+     {% for i in val %}
+    <tr>
+      <td> {{ i.Request }}</td>
+      <td> {{ i.Date }}</td>
+    <td>{{ i.Status }}</td>
+
+    </tr>
+      {% endfor %}
+{#   <tr>#}
+{#      <th colspan="2" scope="row"><label>#}
+{#        <input type="submit" name="Submit" value="SEND" />#}
+{#      </label></th>#}
+{#    </tr>#}
+  </table>
+</form>
+{% endblock %}

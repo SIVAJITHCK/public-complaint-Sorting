@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="addof1#about">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">Name</th>
+      <td><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">E-Type</th>
+      <td><label>
+        <select name="select">
+            <option value="AMBULANCE">AMBULANCE</option>
+            <option value="POLICE">POLICE</option>
+            <option value="FIRE & RESCUE">FIRE & RESCUE</option>
+            <option value="RECOVERY">RECOVERY</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><label>
+        <textarea name="textfield2" required pattern="[A-Z a-z.]{3,25}"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td><label>
+        <input type="text" name="textfield3" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td><label>
+      <input type="text" name="textfield32" required pattern="[0-9]{6}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><label>
+      <input type="text" name="textfield33" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone 1 </th>
+      <td><label>
+      <input type="text" name="textfield34" required pattern="[6789][0-9]{9}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone 2 </th>
+      <td><label>
+      <input type="text" name="textfield35" required pattern="[6789][0-9]{9}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Username </th>
+      <td><label>
+      <input type="text" name="textfield36" required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td><label>
+      <input type="password" name="textfield37" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-primary" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

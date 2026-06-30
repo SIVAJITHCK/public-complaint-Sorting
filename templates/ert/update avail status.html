@@ -1,0 +1,18 @@
+{% extends 'ertindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/updateavlstatus">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">Status</th>
+      <td><label>
+        <input type="text" name="textfield" required />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Submit" class="btn btn-info"/>
+      </label></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

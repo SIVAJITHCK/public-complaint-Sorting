@@ -1,0 +1,38 @@
+{% extends 'indexofficer.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="comp_serc#about" >
+  <table width="423" border="1" class="table table-striped">
+    <tr>
+      <th colspan="4" scope="col"><label>Date
+          <input type="date" name="textfield" required/>
+          <input type="submit" name="Submit" value="Search" class="btn btn-info"/>
+      </label></th>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td>Complaint</td>
+      <td>Location</td>
+      <td>Date</td>
+      <td>Complaint status</td>
+
+      <td>&nbsp;</td>
+    </tr>
+       {% for i in val %}
+    <tr>
+      <td> {{ i.User.Name }}</td>
+      <td> <img src="{{ i.Complaint.url }}" width="100" height="100"></td>
+      <td> {{ i.Latitude  }}<br> {{ i.Longitude }}</td>
+      <td> {{ i.Date }}</td>
+        {% if i.Status == "pending" %}
+      <td><a href="sent_replys/{{ i.id }}#about" class="btn btn-info"  >Sent reply</a></td>
+    {% else %}
+    <td><p>{{ i.Status }}</p></td>
+    {% endif %}
+    </tr>
+      {% endfor %}
+{#    <tr>#}
+{#      <td><div align="center"><a href="send_replys/{{ i.id }}" class="btn btn-info" >Sent reply</a></div></td>#}
+{#    </tr>#}
+  </table>
+</form>
+{% endblock %}
